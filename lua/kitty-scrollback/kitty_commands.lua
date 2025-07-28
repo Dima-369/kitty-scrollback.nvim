@@ -35,7 +35,7 @@ local function get_scrollback_cmd(get_text_args)
   
   -- Add trailing whitespace trimming if enabled
   if opts.trim_trailing_whitespace then
-    sed_cmd = sed_cmd .. [[-e 's/[[:space:]]*$//' ]] -- trim trailing whitespace
+    sed_cmd = sed_cmd .. '-e \'s/[[:space:]]*$//g\' ' -- trim trailing whitespace
   end
   
   sed_cmd = sed_cmd .. [[-e 's/$/\x1b[0m/g']] -- append all lines with reset to avoid unintended colors
