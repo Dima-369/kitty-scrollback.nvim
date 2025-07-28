@@ -6,7 +6,11 @@
 - added `buffer_editable` boolean to opts
 - added `paste_window_on_insert` to opts to avoid opening the paste window on entering insert mode
 
-I had to change `configs/defaults.lua` to my preferred settings, because always when I set the options inside `require("kitty-scrollback").setup({...})` they are not applied. There, I also set `yank_register_enabled = false`.
+I had to change `configs/defaults.lua` to my preferred settings, because always when I set the options inside `require("kitty-scrollback").setup({...})` they are not applied. There, I also set `yank_register_enabled = false` and `keymaps_enabled = false`, and others.
+
+## Adding `paste_window_on_insert` to opts
+
+I added this as a test, but it turns out that on entering insert mode, the buffer is quit?
 
 # Original README
 

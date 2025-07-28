@@ -64,7 +64,7 @@
 ---@field paste_window_on_insert boolean|nil if true, open paste window when entering insert mode (TermEnter)
 local default_opts = {
   callbacks = nil,
-  keymaps_enabled = true,
+  keymaps_enabled = false,
   restore_options = false,
   highlight_overrides = nil,
   status_window = {
