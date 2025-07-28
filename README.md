@@ -1,3 +1,10 @@
+# Fork changes
+
+- Allow setting `virtualedit = 'onemore'` in opts. By default, it uses `all` which I don't like
+- added `trim_trailing_whitespace` to opts, this might not be required since I only later realized that `virtualedit` is set to `all` by default
+
+# Original README
+
 <!-- panvimdoc-ignore-start -->
 
 <img src="https://github.com/mikesmithgh/kitty-scrollback.nvim/assets/10135646/ddd50e0a-ec10-4507-9134-ad7f136c388a" alt="kitty-scrollback" align="right" width="70px" />

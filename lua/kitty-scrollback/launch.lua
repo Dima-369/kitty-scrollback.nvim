@@ -123,7 +123,7 @@ local function set_options()
   }
 
   -- required opts
-  vim.o.virtualedit = 'all' -- all or onemore for correct position
+  vim.o.virtualedit = opts.virtualedit -- configurable virtualedit option
   vim.o.termguicolors = true
 
   -- preferred optional opts
@@ -177,7 +177,7 @@ local set_cursor_position = vim.schedule_wrap(function(d)
   local orig_laststatus = vim.o.laststatus
   vim.o.scrolloff = 0
   vim.o.laststatus = 0
-  vim.o.virtualedit = 'all'
+  vim.o.virtualedit = opts.virtualedit
   ---@diagnostic disable-next-line: param-type-mismatch
   vim.fn.cursor(last_line, 1) -- cursor last line
   -- using normal commands instead of cursor pos due to virtualedit
