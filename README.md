@@ -3,6 +3,8 @@
 - Allow setting `virtualedit = 'onemore'` in opts. By default, it uses `all` which I don't like
 - added `trim_trailing_whitespace` to opts, this might not be required since I only later realized that `virtualedit` is set to `all` by default
 
+I also changed `configs/default.lua` because always when I set the options inside `require("kitty-scrollback").setup({...})` they are not applied.
+
 # Original README
 
 <!-- panvimdoc-ignore-start -->

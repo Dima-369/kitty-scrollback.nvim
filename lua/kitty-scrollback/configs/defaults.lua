@@ -92,8 +92,8 @@ local default_opts = {
   },
   checkhealth = false,
   visual_selection_highlight_mode = 'darken',
-  trim_trailing_whitespace = false,
-  virtualedit = 'all',
+  trim_trailing_whitespace = true,
+  virtualedit = 'onemore',
 }
 
 return default_opts
