@@ -32,7 +32,14 @@ local function get_scrollback_cmd(get_text_args)
   )
   local sed_cmd = [[sed -E ]]
     .. [[-e 's/\r//g' ]] -- added to remove /r added by --add-wrap-markers, (--add-wrap-markers is used to add empty lines at end of screen)
-    .. [[-e 's/$/\x1b[0m/g']] -- append all lines with reset to avoid unintended colors
+  
+  -- Add trailing whitespace trimming if enabled
+  if opts.trim_trailing_whitespace then
+    sed_cmd = sed_cmd .. [[-e 's/[[:space:]]*$//' ]] -- trim trailing whitespace
+  end
+  
+  sed_cmd = sed_cmd .. [[-e 's/$/\x1b[0m/g']] -- append all lines with reset to avoid unintended colors
+  
   local flush_stdout_cmd = p.kitty_data.kitty_path .. [[ +runpy 'sys.stdout.flush()']]
   -- start to set title but do not complete see https://github.com/kovidgoyal/kitty/issues/719#issuecomment-952039731
   local start_set_title_cmd = 'printf "\x1b]2;"'

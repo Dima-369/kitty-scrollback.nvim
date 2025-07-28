@@ -57,6 +57,7 @@
 ---@field kitty_get_text KsbKittyGetText|nil options passed to get-text when reading scrollback buffer, see `kitty @ get-text --help`
 ---@field checkhealth boolean|nil if true execute :checkhealth kitty-scrollback and skip setup
 ---@field visual_selection_highlight_mode string | 'darken' | 'kitty' | 'nvim' | 'reverse' | nil
+---@field trim_trailing_whitespace boolean|nil if true, trim trailing whitespace from every line in the scrollback buffer
 local default_opts = {
   callbacks = nil,
   keymaps_enabled = true,
@@ -69,8 +70,8 @@ local default_opts = {
     show_timer = false,
     icons = {
       kitty = '󰄛',
-      heart = '󰣐', -- variants 󰣐 |  |  | ♥ |  | 󱢠 | 
-      nvim = '', -- variants  |  |  | 
+      heart = '󰣐', -- variants 󰣐 |  |  | ♥ |  | 󱢠 | 
+      nvim = '', -- variants  |  |  | 
     },
   },
   paste_window = {
@@ -90,6 +91,7 @@ local default_opts = {
   },
   checkhealth = false,
   visual_selection_highlight_mode = 'darken',
+  trim_trailing_whitespace = false,
 }
 
 return default_opts
