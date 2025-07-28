@@ -61,6 +61,7 @@
 ---@field virtualedit string|nil set virtualedit option for scrollback buffer, defaults to 'all'
 ---@field delete_trailing_empty_lines boolean|nil if true, delete empty lines at the end of the scrollback buffer
 ---@field buffer_editable boolean|nil if true, make the scrollback buffer editable (modifiable)
+---@field paste_window_on_insert boolean|nil if true, open paste window when entering insert mode (TermEnter)
 local default_opts = {
   callbacks = nil,
   keymaps_enabled = true,
@@ -98,6 +99,7 @@ local default_opts = {
   virtualedit = 'onemore',
   delete_trailing_empty_lines = true,
   buffer_editable = true,
+  paste_window_on_insert = false,
 }
 
 return default_opts

@@ -119,7 +119,7 @@ M.set_term_enter_autocmd = function(bufid)
   vim.api.nvim_create_autocmd({ 'TermEnter' }, {
     group = vim.api.nvim_create_augroup('KittyScrollBackNvimTermEnter', { clear = true }),
     callback = function(e)
-      if e.buf == bufid then
+      if e.buf == bufid and opts.paste_window_on_insert then
         ksb_win.open_paste_window(true)
       end
     end,
