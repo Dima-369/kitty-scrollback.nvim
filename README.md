@@ -1,5 +1,7 @@
 # Fork changes
 
+Note that the shown buffer is `buftype=terminal` which I don't like, because there is no insert mode for quick changes.
+
 - allow setting `virtualedit = 'onemore'` in opts. By default, it uses `all` which I don't like
 - added `trim_trailing_whitespace` to opts, this might not be required since I only later realized that `virtualedit` is set to `all` by default
 - added `delete_trailing_empty_lines` to opts, the scrollback buffer often contains empty lines at the end
@@ -10,7 +12,7 @@ I had to change `configs/defaults.lua` to my preferred settings, because always 
 
 ## Adding `paste_window_on_insert` to opts
 
-I added this as a test, but it turns out that on entering insert mode, the buffer is quit?
+I added this as a test, but it turns out that on entering insert mode, the buffer is quit, which is weird.
 
 # Original README
 
