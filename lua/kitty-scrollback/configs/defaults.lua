@@ -60,6 +60,7 @@
 ---@field trim_trailing_whitespace boolean|nil if true, trim trailing whitespace from every line in the scrollback buffer
 ---@field virtualedit string|nil set virtualedit option for scrollback buffer, defaults to 'all'
 ---@field delete_trailing_empty_lines boolean|nil if true, delete empty lines at the end of the scrollback buffer
+---@field buffer_editable boolean|nil if true, make the scrollback buffer editable (modifiable)
 local default_opts = {
   callbacks = nil,
   keymaps_enabled = true,
@@ -96,6 +97,7 @@ local default_opts = {
   trim_trailing_whitespace = true,
   virtualedit = 'onemore',
   delete_trailing_empty_lines = true,
+  buffer_editable = true,
 }
 
 return default_opts

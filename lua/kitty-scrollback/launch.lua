@@ -172,7 +172,7 @@ local function set_options()
   }
   vim.o.lazyredraw = false -- conflicts with noice
   vim.o.hidden = true
-  vim.o.modifiable = true
+  vim.o.modifiable = opts.buffer_editable
   vim.o.wrap = false
   vim.o.report = 999999 -- arbitrary large number to hide yank messages
 
@@ -421,6 +421,9 @@ M.launch = function()
         
         -- Delete trailing empty lines if enabled
         delete_trailing_empty_lines()
+        
+        -- Set buffer modifiable state based on configuration
+        vim.api.nvim_set_option_value('modifiable', opts.buffer_editable, { buf = p.bufid })
         
         if opts.kitty_get_text.extent == 'screen' or opts.kitty_get_text.extent == 'all' then
           set_cursor_position(p.kitty_data)

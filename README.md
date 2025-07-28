@@ -3,6 +3,7 @@
 - allow setting `virtualedit = 'onemore'` in opts. By default, it uses `all` which I don't like
 - added `trim_trailing_whitespace` to opts, this might not be required since I only later realized that `virtualedit` is set to `all` by default
 - added `delete_trailing_empty_lines` to opts, the scrollback buffer often contains empty lines at the end
+- added `buffer_editable` boolean to opts
 
 I also changed `configs/default.lua` because always when I set the options inside `require("kitty-scrollback").setup({...})` they are not applied. There, I also set `yank_register_enabled = false`.
 
