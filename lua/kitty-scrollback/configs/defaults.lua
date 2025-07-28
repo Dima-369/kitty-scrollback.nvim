@@ -59,6 +59,7 @@
 ---@field visual_selection_highlight_mode string | 'darken' | 'kitty' | 'nvim' | 'reverse' | nil
 ---@field trim_trailing_whitespace boolean|nil if true, trim trailing whitespace from every line in the scrollback buffer
 ---@field virtualedit string|nil set virtualedit option for scrollback buffer, defaults to 'all'
+---@field delete_trailing_empty_lines boolean|nil if true, delete empty lines at the end of the scrollback buffer
 local default_opts = {
   callbacks = nil,
   keymaps_enabled = true,
@@ -83,7 +84,7 @@ local default_opts = {
     winopts_overrides = nil,
     footer_winopts_overrides = nil,
     yank_register = '',
-    yank_register_enabled = true,
+    yank_register_enabled = false,
   },
   kitty_get_text = {
     ansi = true,
@@ -94,6 +95,7 @@ local default_opts = {
   visual_selection_highlight_mode = 'darken',
   trim_trailing_whitespace = true,
   virtualedit = 'onemore',
+  delete_trailing_empty_lines = true,
 }
 
 return default_opts
