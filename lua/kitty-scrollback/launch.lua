@@ -89,10 +89,10 @@ local function delete_trailing_empty_lines()
   if not opts.delete_trailing_empty_lines then
     return
   end
-  
+
   local total_lines = vim.api.nvim_buf_line_count(p.bufid)
   local last_non_empty_line = total_lines
-  
+
   -- Find the last non-empty line
   for i = total_lines, 1, -1 do
     local line = vim.api.nvim_buf_get_lines(p.bufid, i - 1, i, false)[1]
@@ -104,7 +104,7 @@ local function delete_trailing_empty_lines()
       last_non_empty_line = 0 -- all lines are empty
     end
   end
-  
+
   -- Delete trailing empty lines
   if last_non_empty_line < total_lines then
     vim.api.nvim_buf_set_lines(p.bufid, last_non_empty_line, -1, false, {})
@@ -418,13 +418,13 @@ M.launch = function()
     vim.schedule(function()
       ksb_kitty_cmds.get_text_term(get_text_opts(), function()
         ksb_kitty_cmds.signal_winchanged_to_kitty_child_process()
-        
+
         -- Set buffer modifiable state based on configuration
         vim.api.nvim_set_option_value('modifiable', opts.buffer_editable, { buf = p.bufid })
-				
+
         -- Delete trailing empty lines if enabled
         delete_trailing_empty_lines()
-        
+
         if opts.kitty_get_text.extent == 'screen' or opts.kitty_get_text.extent == 'all' then
           set_cursor_position(p.kitty_data)
         end
