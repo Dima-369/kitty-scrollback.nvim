@@ -1,5 +1,7 @@
 # Fork changes
 
+**WARNING: Do not use, just use my custom `kitty_scrollback_nvim` in my init config!**
+
 Note that the shown buffer is `buftype=terminal` which I don't like, because there is no insert mode for quick changes.
 
 - allow setting `virtualedit = 'onemore'` in opts. By default, it uses `all` which I don't like
